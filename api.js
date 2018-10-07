@@ -18,7 +18,7 @@ function numberToBytes(long) {
 
 exports.getStat = function(apiBase) {
   return axios.post(`${apiBase}/stat`, {
-    Option: 2
+    Option: 1
   });
 };
 

@@ -89,7 +89,7 @@ function main() {
   setInterval(() => {
     getStat(provider.apiBase, 'provider');
     getStat(user.apiBase, 'user');
-  }, 5000);
+  }, 2000);
 }
 
 main();

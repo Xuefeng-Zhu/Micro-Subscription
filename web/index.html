@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>
+    Chain Host</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        Chain Host</a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Launching a cloud service can never be easier!</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-credit-card m-auto text-primary"></i>
+            </div>
+            <h3>Micro payment</h3>
+            <p class="lead mb-0">Pay as you go by minutes!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Instant scaling</h3>
+            <p class="lead mb-0">Just update plan and pay correspondingly</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>Blockchain guard</h3>
+            <p class="lead mb-0">SLA is guarded by blockchain. No hassal for dispute!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Plans</h1>
+      <p class="lead">Start with whatever make sense to you.</p>
+    </div>
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Small</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">1 szabo<small class="text-muted">/ min</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>1 core CPU</li>
+            <li>512 MB memory</li>
+            <li>50 GB storage</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#planModal">Choose</button>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Median</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">2 szabo<small class="text-muted">/ min</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>2 core CPU</li>
+            <li>1 GB memory</li>
+            <li>100 GB storage</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#planModal">Choose</button>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Large</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">4 szabo<small class="text-muted">/ min</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>4 core CPU</li>
+            <li>2 GB memory</li>
+            <li>200 GB storage</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#planModal">Choose</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="planModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New plan</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="before-form" action="#">
+                <div class="form-group">
+                  <label for="user-address" class="col-form-label">Your Eth Address:</label>
+                  <input type="text" class="form-control" id="user-address" required>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+              </form>
+              <form id="after-form" style="display: none">
+                  <div class="form-group">
+                    <label for="payment-address" class="col-form-label">Payment Address:</label>
+                    <input type="text" class="form-control" id="payment-address" disabled value="0x2b6ba5ebca5b6d8a60d1037e5a762c734695cceb">
+                  </div>
+                  <div class="form-group">
+                    <label for="oracle-address" class="col-form-label">Oracle Address:</label>
+                    <input type="text" class="form-control" id="oracle-address" disabled value="0x2b6ba5ebca5b6d8a60d1037e5a762c734695cceb">
+                  </div>
+                  <div class="form-group">
+                    <label for="server-address" class="col-form-label">Server address:</label>
+                    <input type="text" class="form-control" id="server-address" disabled value="218.14.53.32">
+                  </div>
+                  <div class="form-group">
+                    <label for="server-password" class="col-form-label">Server password:</label>
+                    <input type="text" class="form-control" id="server-password" disabled value="chain host">
+                  </div>
+                </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">About</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Chain Host 2018. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fab fa-facebook fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mr-3">
+                <a href="#">
+                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-instagram fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="customize.js"></script>
+
+</body>
+
+</html>
