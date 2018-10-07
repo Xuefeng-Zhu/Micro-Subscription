@@ -1,0 +1,10 @@
+{
+  "extends":[
+    "umi",
+    "plugin:react/recommended",
+    "react-app"
+  ],
+  "rules": {
+    "react/prop-types": [1, {}]
+  }
+}

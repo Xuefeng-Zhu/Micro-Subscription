@@ -1,0 +1,9 @@
+{
+    "extraBabelPlugins": [
+        ["import", {
+        "libraryDirectory": "es",
+        "libraryName": "antd",
+        "style": true
+        }]
+    ]
+}

@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "roadhog server",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "antd": "^3.10.0",
+    "axios": "^0.18.0",
+    "dva": "^2.4.0",
+    "firebase": "^5.5.3",
+    "lodash": "^4.17.11",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-dva-hmr": "^0.4.1",
+    "babel-plugin-import": "^1.9.1",
+    "eslint": "^5.6.1",
+    "eslint-config-react-app": "^3.0.3",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^1.1.0",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^2.0.0"
+  }
+}
