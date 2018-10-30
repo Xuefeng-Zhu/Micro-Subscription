@@ -5,8 +5,8 @@ A new payment and dispute solution for cloud service. Users are able to make mic
 ## Instruction
 
 1. Update `config.js` with your own configuration
-2. Run `node generate-keys.js` to have your key store generated
+2. Run `npm install` and then `node generate-keys.js` to have your key store generated
 3. Go to celer directory, and start two celer client, one for user and one for service provider. To start celer client, run `./celer_client -p 8081 -w 123456 -k user.json` and `./celer_client -p 8082 -w 123456 -k provider.json`
 4. Run `node index.js` to launch node client, which will trigger state channel payment and monitor service status
-5. Go to dashboard, run `npm install & npm start` to luanch a simple statistics dashboard.
+5. Go to dashboard, run `npm install & npm start` to launch a simple statistics dashboard.
 
