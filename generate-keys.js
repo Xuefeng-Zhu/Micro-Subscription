@@ -18,7 +18,7 @@ function generateKey(role) {
   web3.eth.sendTransaction({
     from: infura.account,
     to: address,
-    value: web3.utils.toWei('6'),
+    value: web3.utils.toWei('1'),
     gas: 200000
   });
 }

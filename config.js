@@ -1,3 +1,5 @@
+const celer = require('./celer-sdk/dist/index');
+
 try {
   var userKey = require('./celer/user_key.json');
   var providerKey = require('./celer/provider_key.json');
@@ -11,13 +13,13 @@ module.exports = {
   firebase: 'https://chaincloud-a384b.firebaseio.com',
   user: {
     address: userKey.address,
-    apiBase: 'http://localhost:8081',
-    queryResult: [1]
+    client: new celer.Client('http://localhost:29979'),
+    queryResult: Uint8Array.from([1])
   },
   provider: {
     address: providerKey.address,
-    apiBase: 'http://localhost:8082',
-    queryResult: [0]
+    client: new celer.Client('http://localhost:29980'),
+    queryResult: Uint8Array.from([0])
   },
   amount: '1',
   frequency: 20,

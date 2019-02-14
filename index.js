@@ -11,25 +11,29 @@ const TIMEOUT = frequency * 1000;
 let health;
 let loadingHealth;
 
-function getStat(apiBase, role) {
-  api.getStat(apiBase).then(({ data }) => {
+function openChannel(client) {
+  return client.openEthChannel('100', '100');
+}
+
+function getStat(client, role) {
+  api.getStat(client).then((data) => {
     axios.put(`${firebase}/${role}.json`, data);
   });
 }
 
-function resolveChannel(apiBase, onSuccess = _.noop) {
+function resolveChannel(client, onSuccess = _.noop) {
   console.log(`resolve payment at ${new Date()}`);
 
-  return api.resolveChannel(apiBase).then(onSuccess);
+  return api.resolveChannel(client).then(onSuccess);
 }
 
 function sendUserPay() {
   console.log(`Send user payment at ${new Date()}`);
   return api
-    .sendPay(user.apiBase, provider.address, user.queryResult)
+    .sendPay(user.client, provider.address, user.queryResult)
     .then(() => {
       setTimeout(() => {
-        resolveChannel(user.apiBase, sendUserPay);
+        resolveChannel(user.client, sendUserPay);
       }, TIMEOUT);
     });
 }
@@ -38,10 +42,10 @@ function sendProviderPay() {
   console.log(`Send provider payment at ${new Date()}`);
 
   return api
-    .sendPay(provider.apiBase, user.address, provider.queryResult)
+    .sendPay(provider.client, user.address, provider.queryResult)
     .then(() => {
       setTimeout(() => {
-        resolveChannel(provider.apiBase, sendProviderPay);
+        resolveChannel(provider.client, sendProviderPay);
       }, TIMEOUT);
     });
 }
@@ -69,8 +73,8 @@ function checkHealth() {
       chain
         .updateUptime()
         .then(res => {
-          resolveChannel(user.apiBase);
-          resolveChannel(provider.apiBase);
+          resolveChannel(user.client);
+          resolveChannel(provider.client);
           axios.put(
             `${firebase}/uptime.json`,
             `${health}`
@@ -82,14 +86,19 @@ function checkHealth() {
 }
 
 function main() {
-  sendUserPay();
-  sendProviderPay();
+  // openChannel(user.client)
+  Promise.all([openChannel(user.client), openChannel(provider.client)])
+  .then(() => {
+    console.log('test')
+    sendUserPay();
+    sendProviderPay();
 
-  setInterval(checkHealth, 1000);
-  setInterval(() => {
-    getStat(provider.apiBase, 'provider');
-    getStat(user.apiBase, 'user');
-  }, 2000);
+    setInterval(checkHealth, 1000);
+    setInterval(() => {
+      getStat(provider.client, 'provider');
+      getStat(user.client, 'user');
+    }, 2000);
+  })
 }
 
 main();

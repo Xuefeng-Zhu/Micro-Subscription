@@ -1,0 +1,6 @@
+.cache
+.DS_Store
+/dist/
+/demoout/
+/tsout/
+node_modules/

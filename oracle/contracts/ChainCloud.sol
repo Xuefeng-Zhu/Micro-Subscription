@@ -22,7 +22,6 @@ contract ChainCloud is Chainlinked {
     path[0] = "running";
     run.addStringArray("path", path);
     chainlinkRequest(run, LINK(1));
-
   }
 
   function report(bytes32 _externalId, uint256 _uptime)
