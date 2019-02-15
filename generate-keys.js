@@ -25,3 +25,4 @@ function generateKey(role) {
 
 generateKey('user');
 generateKey('provider');
+provider.engine.stop();
