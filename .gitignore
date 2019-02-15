@@ -1,3 +1,6 @@
+.DS_Store
+/celer/provider_key.json
+/celer/user_key.json
 
 # Created by https://www.gitignore.io/api/node
 
@@ -75,6 +78,5 @@ typings/
 
 # Serverless directories
 .serverless
-
 
 # End of https://www.gitignore.io/api/node

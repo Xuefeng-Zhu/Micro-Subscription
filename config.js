@@ -1,4 +1,4 @@
-const celer = require('./celer-sdk/dist/index');
+const celer = require('celer-web-sdk');
 
 try {
   var userKey = require('./celer/user_key.json');
@@ -25,7 +25,8 @@ module.exports = {
   frequency: 20,
   infura: {
     url: 'https://ropsten.infura.io/v3/59ce8e43e116409fa8ddaa7494ea7805',
-    mnemonic: 'kitchen dish narrow reject across kiwi style segment patrol dutch much odor expect enjoy actress',
+    mnemonic:
+      'kitchen dish narrow reject across kiwi style segment patrol dutch much odor expect enjoy actress',
     account: '0x4b74cf3ef96b6eb7f1e73613e0c7f732deb8f483'
   }
 };

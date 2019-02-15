@@ -16,7 +16,8 @@ function openChannel(client) {
 }
 
 function getStat(client, role) {
-  api.getStat(client).then((data) => {
+  api.getStat(client).then(data => {
+    console.log(role, data);
     axios.put(`${firebase}/${role}.json`, data);
   });
 }
@@ -52,18 +53,17 @@ function sendProviderPay() {
 
 function checkHealth() {
   if (loadingHealth) {
-    return
+    return;
   }
 
   if (_.isNil(health)) {
-    loadingHealth = true
-    chain.uptime()
-    .then((res) => {
-      loadingHealth = false
+    loadingHealth = true;
+    chain.uptime().then(res => {
+      loadingHealth = false;
       health = res.toNumber();
       axios.put(`${firebase}/uptime.json`, `${health}`);
       axios.put(`${firebase}/health/running.json`, `${health}`);
-    })
+    });
     return;
   }
 
@@ -75,10 +75,7 @@ function checkHealth() {
         .then(res => {
           resolveChannel(user.client);
           resolveChannel(provider.client);
-          axios.put(
-            `${firebase}/uptime.json`,
-            `${health}`
-          );
+          axios.put(`${firebase}/uptime.json`, `${health}`);
         })
         .catch(console.log);
     }
@@ -86,19 +83,18 @@ function checkHealth() {
 }
 
 function main() {
-  // openChannel(user.client)
-  Promise.all([openChannel(user.client), openChannel(provider.client)])
-  .then(() => {
-    console.log('test')
-    sendUserPay();
-    sendProviderPay();
+  Promise.all([openChannel(user.client), openChannel(provider.client)]).then(
+    () => {
+      sendUserPay();
+      setTimeout(() => sendProviderPay(), 1000);
 
-    setInterval(checkHealth, 1000);
-    setInterval(() => {
-      getStat(provider.client, 'provider');
-      getStat(user.client, 'user');
-    }, 2000);
-  })
+      setInterval(checkHealth, 1000);
+      setInterval(() => {
+        getStat(provider.client, 'provider');
+        getStat(user.client, 'user');
+      }, 2000);
+    }
+  );
 }
 
 main();
