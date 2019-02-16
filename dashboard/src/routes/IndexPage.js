@@ -21,7 +21,7 @@ function IndexPage({ chain, dispatch }) {
       <Header className={styles.header}>
         Chain Host Dashboard
         <span className={styles.status}>
-          Network Status:{" "}
+          Service Status:{" "}
           <Switch
             checkedChildren="up"
             unCheckedChildren="down"

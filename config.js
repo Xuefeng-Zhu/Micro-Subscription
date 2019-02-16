@@ -1,3 +1,5 @@
+const celer = require('celer-web-sdk');
+
 try {
   var userKey = require('./celer/user_key.json');
   var providerKey = require('./celer/provider_key.json');
@@ -11,19 +13,20 @@ module.exports = {
   firebase: 'https://chaincloud-a384b.firebaseio.com',
   user: {
     address: userKey.address,
-    apiBase: 'http://localhost:8081',
-    queryResult: [1]
+    client: new celer.Client('http://localhost:29979'),
+    queryResult: Uint8Array.from([1])
   },
   provider: {
     address: providerKey.address,
-    apiBase: 'http://localhost:8082',
-    queryResult: [0]
+    client: new celer.Client('http://localhost:29980'),
+    queryResult: Uint8Array.from([0])
   },
   amount: '1',
   frequency: 20,
   infura: {
     url: 'https://ropsten.infura.io/v3/59ce8e43e116409fa8ddaa7494ea7805',
-    mnemonic: 'kitchen dish narrow reject across kiwi style segment patrol dutch much odor expect enjoy actress',
+    mnemonic:
+      'kitchen dish narrow reject across kiwi style segment patrol dutch much odor expect enjoy actress',
     account: '0x4b74cf3ef96b6eb7f1e73613e0c7f732deb8f483'
   }
 };
